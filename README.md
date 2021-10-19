@@ -1,9 +1,6 @@
 # Aug_Sept_OJT_2021
 
 
-
-
-
 My Youtube Channel https://www.youtube.com/c/LearnWithSumitTech
 
 linkedin.com/in/ sumit-raokhande-09aaba21
