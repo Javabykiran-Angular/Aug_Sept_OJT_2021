@@ -1,0 +1,29 @@
+<p>event-binding1 works!</p>
+
+<!-- <button (click)="onClick()">
+    Click</button> <br><br>
+
+<img src="../../assets/bg.jpeg"
+ alt="" (click)="onImageClick()" 
+ id="img1"> <br><br> -->
+
+ <!-- $event => It is special variable
+     given by the angular
+   it is used to give current dom element information return it  
+   from $event we can only get a data but u can't manipulate or change that data 
+-->
+
+
+<button (click)="onEvent($event)"
+    value="Doller Event Occur..."
+>EventInFo</button> <br><br>
+
+<!-- template ref.variable =>
+we can get a data of html element & u can change the data  -->
+
+<input type="text" #inputname
+placeholder="Enter the Name.."> <br><br>
+<button (click)="onClick1(inputname)">Click</button>
+
+
+
