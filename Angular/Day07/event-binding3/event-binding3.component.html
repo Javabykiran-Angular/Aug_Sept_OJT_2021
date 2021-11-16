@@ -1,0 +1,17 @@
+<p>event-binding3 works!</p>
+
+
+<button (click)="result=2+2" >Addition</button>
+<br>
+<h2>Result :: {{result}} </h2>
+<hr>
+<!-- two way binding -->
+
+<!-- ngModel directive=> 
+    it is used for two way binding but that directive 
+    should be used in proper banna in the box notation [()] -->
+
+    <!-- syntax=> [(ngModel)]="PropertyName" -->
+
+    <input type="text" [(ngModel)]="name"> &nbsp; {{name}}
+
