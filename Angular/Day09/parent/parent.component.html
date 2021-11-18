@@ -1,0 +1,14 @@
+<p>parent works!</p>
+
+<input type="text" #inputname
+placeholder="Enter the name">
+<button (click)="onClick(inputname.value)">Send</button>
+
+<hr>
+<!-- <app-child1 
+[StrParentData]="strdata" 
+[JsonParentObj]="jsonObj"
+>
+</app-child1> -->
+
+<app-child1 [DynamicData]="name" [parentRating]="AppRating"></app-child1>
