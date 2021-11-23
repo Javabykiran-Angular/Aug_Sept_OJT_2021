@@ -1,0 +1,36 @@
+<p>parent works!</p>
+
+<!-- <input type="text" #inputname
+placeholder="Enter the name">
+<button (click)="onClick(inputname.value)">Send</button> -->
+
+
+<h2>Child Data :: {{ChildStrDataReceived}} </h2>
+
+<h2>Json Data</h2>
+<h3>Cotton Type :: {{ChildJsonData.clothtype}} </h3>
+<h3>Brand   :: {{ChildJsonData.brand}} </h3>
+<h3> Price Range    :: {{ChildJsonData.pricerange}} </h3>
+<h3>-----------------------</h3>
+    <ul >
+        <li *ngFor="let item of ChildArrayData">
+            {{item}}     
+        </li>
+    </ul>
+
+
+<hr>
+<!-- <app-child1 
+[StrParentData]="strdata" 
+[JsonParentObj]="jsonObj"
+>
+</app-child1> -->
+
+<!-- <app-child1 [DynamicData]="name" [parentRating]="AppRating"></app-child1> -->
+
+
+<app-child2 
+(ChildStrEvent)="ChildStrDataReceived=$event"
+(ChildJsonEvent)="onFilter($event)"
+(ChildArrayEvent)="ChildArrayData=$event"
+></app-child2>
