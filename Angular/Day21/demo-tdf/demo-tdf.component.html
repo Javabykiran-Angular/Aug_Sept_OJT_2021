@@ -1,0 +1,36 @@
+<p>demo-tdf works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" ngModel name="myusername"
+                    minlength="4" pattern="admin"
+                    #username="ngModel" 
+                    class="form-control"
+                    placeholder="Enter the username" required>
+
+                    <div class="alert alert-danger"
+                            *ngIf="username.touched && !username.valid"
+                        >** Please enter the username   
+                        <div *ngIf="username.errors.minlength">
+                            ** Please enter minimum length is
+                             {{username.errors.minlength.requiredLength}}
+                        </div>
+                        <div *ngIf="username.errors.pattern">
+                            ** Please Enter the Appropriate pattern
+
+                        </div>
+
+                    </div>
+
+
+            </div>
+            <br>
+            <button class="btn btn-outline-success">Submit</button>
+
+
+        </div>
+    </div>
+</div>
