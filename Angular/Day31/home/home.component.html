@@ -1,0 +1,59 @@
+
+<div class="container-fluid">
+<app-header></app-header>
+<br>
+<div class="row">
+    <div class="col">
+
+        <div>
+            <button (click)="onAddEmployee()" 
+            class="btn btn-success">Add Employee</button>
+            <button (click)="onEdit(popUp)" 
+            class="btn btn-warning">Update Employee</button>
+        </div>
+        <br>
+
+        <ng-template #popUp >
+         <app-update-employee [parentdata]="empobj"></app-update-employee>
+          <button (click)="modalRef.hide()" class="btn btn-danger" >Cancel</button>
+        </ng-template>    
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th>#</th>
+                <th>Action</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Created Date</th>
+                <th>Updatated Date</th>
+                <th>Country</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of EmpData;index as i">
+                    <td> {{i+1}} </td>
+                    <td title="Select to Update or Delete or Change status of record" 
+                    style="text-align: center;">
+                    <input type="radio" name="radiocheck" (click)="onRadioClick(item)">
+                     </td>
+                    <td> <a [routerLink]="['/EmployeeDetails',item.id]"> {{item.name}} </a></td>
+                    <td> {{item.departmentit}} </td>
+                    <td> <h5 style="text-align: center;"> <span [ngClass]="{
+                        'badge':true,
+                        'badge-pill':true,
+                        'badge-success': item.status.toLowerCase() =='active',
+                        'badge-warning' : item.status.toLowerCase() =='inactive',
+                        'badge-danger' : item.status.toLowerCase() == 'suspend'
+
+                    }" style="padding: 8px;">{{item.status}} </span> </h5> </td>
+                    <td> {{item.createddtm|date:'dd-MM-yyyy'}} </td>
+                    <td> {{item.updateddtm|date:'dd-MM-yyyy'}} </td>
+                    <td> {{item.country.cname}} </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+</div>
